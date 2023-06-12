@@ -1,0 +1,3 @@
+Note that to obtain the features as shown in Figures 11-12 in the Final report, the threshold value 'thr' used in the 'feature_extraction.m' file was 0.0598 (correct) instead of 0.0488 (incorrect). 
+
+[The 0.0488 was originally calculated from 'testing_code_find_minimum.m' incorrectly because the 'male_day_3.mat' database was wrongly imported two times (this has been corrected and now the 'testing_code_find_minimum.m' code outputs 0.0598).]
