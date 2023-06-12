@@ -6,7 +6,6 @@ clear; clc;
 thr = single(0.0598);
 %thr = single(0.0488);
 
-%
 %--- Database 1 ---%
 %Importing and combining Database 1 data
 load('../Database 1/female_1.mat'); 
@@ -33,17 +32,17 @@ gest1_ch1 = single(gest1_ch1); gest1_ch2 = single(gest1_ch2);
 gest2_ch1 = single(gest2_ch1); gest2_ch2 = single(gest2_ch2);
 
 %Clearing unused variables
-clearvars -except thr gest1_ch1 gest1_ch2 gest2_ch1 gest2_ch2
+clearvars -except thr gest1_ch1 gest1_ch2 gest2_ch1 gest2_ch2;
 
 %Pre-processing samples from Database 1
 if size(gest1_ch1,1) ~= size(gest1_ch2,1)   %Gesture 1
-    disp('Channel 1 and Channel 2 sample size does not match for Gesture 1')
+    disp('Channel 1 and Channel 2 sample size does not match for Gesture 1');
 else
     [gest1_ch1, wl_gest1_ch1] = pre_processing(gest1_ch1, thr);
     [gest1_ch2, wl_gest1_ch2] = pre_processing(gest1_ch2, thr);
 end
 if size(gest2_ch1,1) ~= size(gest2_ch2,1)   %Gesture 2
-    disp('Channel 1 and Channel 2 sample size does not match for Gesture 2')
+    disp('Channel 1 and Channel 2 sample size does not match for Gesture 2');
 else
     [gest2_ch1, wl_gest2_ch1] = pre_processing(gest2_ch1, thr);
     [gest2_ch2, wl_gest2_ch2] = pre_processing(gest2_ch2, thr);
@@ -54,7 +53,6 @@ data_gest1 = feature_function(gest1_ch1, gest1_ch2, wl_gest1_ch1, wl_gest1_ch2);
 data_gest2 = feature_function(gest2_ch1, gest2_ch2, wl_gest2_ch1, wl_gest2_ch2);
 %}
 
-%
 %--- Database 2 ---%
 %Importing and combining Database 2 data
 load('../Database 2/male_day_1.mat'); 
@@ -73,17 +71,17 @@ gest1_ch1 = single(gest1_ch1); gest1_ch2 = single(gest1_ch2);
 gest2_ch1 = single(gest2_ch1); gest2_ch2 = single(gest2_ch2);
 
 %Clearing unused variables
-clearvars -except data_gest1 data_gest2 thr gest1_ch1 gest1_ch2 gest2_ch1 gest2_ch2
+clearvars -except data_gest1 data_gest2 thr gest1_ch1 gest1_ch2 gest2_ch1 gest2_ch2;
 
 %Pre-processing samples from Database 2
 if size(gest1_ch1,1) ~= size(gest1_ch2,1)   %Gesture 1
-    disp('Channel 1 and Channel 2 sample size does not match for Gesture 1')
+    disp('Channel 1 and Channel 2 sample size does not match for Gesture 1');
 else
     [gest1_ch1, wl_gest1_ch1] = pre_processing(gest1_ch1, thr);
     [gest1_ch2, wl_gest1_ch2] = pre_processing(gest1_ch2, thr);
 end
 if size(gest2_ch1,1) ~= size(gest2_ch2,1)   %Gesture 2
-    disp('Channel 1 and Channel 2 sample size does not match for Gesture 2')
+    disp('Channel 1 and Channel 2 sample size does not match for Gesture 2');
 else
     [gest2_ch1, wl_gest2_ch1] = pre_processing(gest2_ch1, thr);
     [gest2_ch2, wl_gest2_ch2] = pre_processing(gest2_ch2, thr);

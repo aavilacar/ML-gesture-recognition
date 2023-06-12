@@ -1,7 +1,8 @@
 %This code displays graphically the process of signal endpoint detection
 clear;
-load('../Database 2/male_day_3.mat')    %Loading dataset (each row in the matrix corresponds to the data for a sample)
+load('../Database 2/male_day_3.mat');    %Loading dataset (each row in the matrix corresponds to the data for a sample)
 gest_ch_complete = hook_ch1;    %Choosing the gesture and channel to analyse
+clearvars -except gest_ch_complete;    %Clearing unused variables
 
 %Setting the threshold to be used for endpoint detection
 thr = single(0.0488);
